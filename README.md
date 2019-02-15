@@ -17,7 +17,7 @@ If you choose to take a different approach you can do the following
 3. Use Azure CLI to launch a VM-Series running PAN-OS 8.1 into the exact same Resource Group as the first firewall
 4. Upgrade to PAN-OS 9.0
 
-For more information on how to use the Azure CLI. [CLICK HERE](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
+For more information on how to use the Azure CLI. [CLICK HERE](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)  
 For an Online Azure CLI shell use the following link and select the Powershell option. [CLICK HERE](https://shell.azure.com/)
 
 Please understand that when the template is launched it will NOT configure the necessary setting in Azure for HA. It will simply allow you to launch a second VM-Series into a resource group that has an existing VM-Series. 
