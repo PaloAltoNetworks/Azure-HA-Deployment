@@ -1,4 +1,14 @@
 # Traditional High-Availability in Azure 
+
+# PAN-OS 9.0 Image is in Staging and will be released soon. Temporary launch instructions. 
+1. launch a VM-Series firewall using the latest which is 8.1
+2. Upgrade to PAN-OS 9.0
+3. Use Azure CLI to launch a VM-Series running PAN-OS 8.1 into the exact same Resource Group as the first firewall
+4. Upgrade to PAN-OS 9.0
+
+
+
+
 The Purpose of this template is to allow you to launch a second VM-Series into an existing resource group because the Azure Marketplace will not allow this. 
 
 You will still be responsible for configuring your own Azure HA settings within the Azure Portal and the VM-Series firewall. Please refer to the VM-Series deployment guide for 9.0 for configuration details. [DEPLOYMENT GUIDE](https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/set-up-the-vm-series-firewall-on-azure/configure-activepassive-ha-for-vm-series-firewall-on-azure.html)
@@ -10,13 +20,12 @@ You will still be responsible for configuring your own Azure HA settings within 
 
 If you choose to take a different approach you can do the following
 
-1. Launch a VM-Series firewall using the latest which is 8.1
-2. Upgrade to PAN-OS 9.0
-3. Use Azure CLI to launch a VM-Series running PAN-OS 8.1 into the exact same Resource Group as the first firewall
-4. Upgrade to PAN-OS 9.0
+1. Launch a VM-Series firewall using the latest which is 9.0(only needed if you don't have an existing VM-Series launched)
+2. Use Azure CLI to launch a second VM-Series running PAN-OS 8.1 into the exact same Resource Group as the first firewall
 
 For more information on how to use the Azure CLI. [CLICK HERE](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)  
 For an Online Azure CLI shell use the following link and select the Powershell option. [CLICK HERE](https://shell.azure.com/)
+For information on how to setup an Azure Service Principal [CLICK HERE] (https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal)  
 
 
 # Support Policy: Community-Supported
