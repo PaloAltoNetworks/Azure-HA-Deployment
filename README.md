@@ -1,5 +1,3 @@
-# Azure-HA
-
 # Please Read 
 The Purpose of this template is to allow you to launch a second VM-Series into an existing resource group because the Azure Marketplace will not allow this. 
 
