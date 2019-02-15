@@ -1,7 +1,7 @@
 # Traditional High-Availability in Azure 
 The Purpose of this template is to allow you to launch a second VM-Series into an existing resource group because the Azure Marketplace will not allow this. 
 
-You will still be responsible for configuring your own Azure HA settings within the Azure Portal and the VM-Series firewall. Please refere to the VM-Series deployment guide for 9.0 for configuration details. [Deployment Guide](https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/set-up-the-vm-series-firewall-on-azure/configure-activepassive-ha-for-vm-series-firewall-on-azure.html)
+You will still be responsible for configuring your own Azure HA settings within the Azure Portal and the VM-Series firewall. Please refer to the VM-Series deployment guide for 9.0 for configuration details. [DEPLOYMENT GUIDE](https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/set-up-the-vm-series-firewall-on-azure/configure-activepassive-ha-for-vm-series-firewall-on-azure.html)
 
 
 [<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FPaloAltoNetworks%2FAzure-HA-Deployment%2Fmaster%2Fazuredeploy.json?token=AZoiWXZHIcxPcJG4iqbfyOUvHN1O8coUks5ahgGXwA%3D%3D)
