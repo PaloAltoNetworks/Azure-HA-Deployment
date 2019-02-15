@@ -6,11 +6,11 @@ This template will allow you to launch a second VM-Series into an existing resou
 
 You will still be responsible for configuring your own Azure HA settings within the Azure Portal and the VM-Series firewall. 
 
-In the meantime you can take the following steps
+# In the meantime you can take the following steps
 
 1. launch a VM-Series firewall using the latest which is 8.1
 2. Upgrade to PAN-OS 9.0
-3. Use Azure CLI to launch a VM-SEries into the exact same Resource Group as the first firewall
+3. Use Azure CLI to launch a VM-Series running PAN-OS 8.1 into the exact same Resource Group as the first firewall
 4. Upgrade to PAN-OS 9.0
 
 
