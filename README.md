@@ -1,18 +1,24 @@
 # Azure-HA
 
-We are planning to release the VM-Series 9.0 image in Azure soon. We will keep you updated on the progress. 
+#Please Read
+The Purpose of this template is to allow you to launch a second VM-Series into an existing resource group because the Azure Marketplace will not allow this. 
 
-This template will allow you to launch a second VM-Series into an existing resource group because the Azure Marketplace will not allow that. 
+You will still be responsible for configuring your own Azure HA settings within the Azure Portal and the VM-Series firewall. Please refere to the VM-Series deployment guide for 9.0 for configuration details. [CLICK HERE](https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/set-up-the-vm-series-firewall-on-azure/configure-activepassive-ha-for-vm-series-firewall-on-azure.html)
 
-You will still be responsible for configuring your own Azure HA settings within the Azure Portal and the VM-Series firewall. 
 
-# In the meantime you can take the following steps
+[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FPaloAltoNetworks%2FAzure-HA-Deployment%2Fmaster%2Fazuredeploy.json?token=AZoiWXZHIcxPcJG4iqbfyOUvHN1O8coUks5ahgGXwA%3D%3D)
 
-1. launch a VM-Series firewall using the latest which is 8.1
+# Manual Approach
+
+If you choose to take a different approach you can do the following
+
+1. Launch a VM-Series firewall using the latest which is 8.1
 2. Upgrade to PAN-OS 9.0
 3. Use Azure CLI to launch a VM-Series running PAN-OS 8.1 into the exact same Resource Group as the first firewall
 4. Upgrade to PAN-OS 9.0
 
+For more information on how to use the Azure CLI. [CLICK HERE](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
+For an Online Azure CLI shell use the following link and select the Powershell option. [CLICK HERE](https://shell.azure.com/)
 
 Please understand that when the template is launched it will NOT configure the necessary setting in Azure for HA. It will simply allow you to launch a second VM-Series into a resource group that has an existing VM-Series. 
 
