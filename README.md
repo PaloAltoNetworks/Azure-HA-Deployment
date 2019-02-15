@@ -25,7 +25,7 @@ If you choose to take a different approach you can do the following
 
 For more information on how to use the Azure CLI. [CLICK HERE](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)  
 For an Online Azure CLI shell use the following link and select the Powershell option. [CLICK HERE](https://shell.azure.com/)
-For information on how to setup an Azure Service Principal [CLICK HERE] (https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal)  
+For information on how to setup an Azure Service Principal [CLICK HERE](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal)  
 
 
 # Support Policy: Community-Supported
