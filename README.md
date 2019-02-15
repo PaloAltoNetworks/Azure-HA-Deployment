@@ -1,6 +1,6 @@
 # Azure-HA
 
-#Please Read 
+# Please Read 
 The Purpose of this template is to allow you to launch a second VM-Series into an existing resource group because the Azure Marketplace will not allow this. 
 
 You will still be responsible for configuring your own Azure HA settings within the Azure Portal and the VM-Series firewall. Please refere to the VM-Series deployment guide for 9.0 for configuration details. [CLICK HERE](https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/set-up-the-vm-series-firewall-on-azure/configure-activepassive-ha-for-vm-series-firewall-on-azure.html)
