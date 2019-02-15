@@ -1,6 +1,6 @@
 # Traditional High-Availability in Azure 
 
-# PAN-OS 9.0 Image is in Staging and will be released soon. Temporary launch instructions. 
+# The PAN-OS 9.0 Image in Azure Portal is in Staging and will be live soon.  Temporary launch instructions. 
 1. launch a VM-Series firewall using the latest which is 8.1
 2. Upgrade to PAN-OS 9.0
 3. Use Azure CLI to launch a VM-Series running PAN-OS 8.1 into the exact same Resource Group as the first firewall
@@ -24,7 +24,7 @@ If you choose to take a different approach you can do the following
 2. Use Azure CLI to launch a second VM-Series running PAN-OS 8.1 into the exact same Resource Group as the first firewall
 
 For more information on how to use the Azure CLI. [CLICK HERE](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)  
-For an Online Azure CLI shell use the following link and select the Powershell option. [CLICK HERE](https://shell.azure.com/)
+For an Online Azure CLI shell use the following link and select the Powershell option. [CLICK HERE](https://shell.azure.com/) 
 For information on how to setup an Azure Service Principal [CLICK HERE](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal)  
 
 
