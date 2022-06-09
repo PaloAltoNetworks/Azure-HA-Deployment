@@ -53,26 +53,28 @@
     "vmSize": {
       "type": "string",
       "allowedValues": [
-        "Standard_D3",
-        "Standard_D4",
-        "Standard_D3_v2",
-        "Standard_D4_v2",
-        "Standard_D5_v2",
-        "Standard_D3_v3",
-        "Standard_D4_v3",
-        "Standard_D16_v3",
         "Standard_DS3_v2",
         "Standard_DS4_v2",
         "Standard_DS5_v2",
-        "Standard_DS3_v3",
-        "Standard_DS4_v3",
-        "Standard_DS16_v3",
-        "Standard_A4"
+        "Standard_D3_v2",
+        "Standard_D4_v2",
+        "Standard_D4_v3",
+        "Standard_D5_v2",
+        "Standard_D8_v3",
+        "Standard_D8_v4",
+        "Standard_D16_v3",
+        "Standard_D16_v4",
+        "Standard_D8s_v4",
+        "Standard_D16s_v4",
+        "Standard_F8s_v2",
+        "Standard_F32s_v2",
+        "Standard_D8s_v3",
+        "Standard_D16s_v3"
       ],
       "metadata": {
         "description": "Azure VM size for VM-Series"
       },
-      "defaultValue": "Standard_D3_v2"
+      "defaultValue": "Standard_DS3_v2"
     },
     "virtualNetworkName": {
       "type": "string",
