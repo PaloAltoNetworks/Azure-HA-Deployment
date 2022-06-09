@@ -1,15 +1,15 @@
 **The Purpose of this template is to allow you to launch a second VM-Series into an existing resource group because the Azure Marketplace will not allow this.**   
 
-You will still be responsible for configuring your own Azure HA settings within the Azure Portal and the VM-Series firewall. Please refer to the VM-Series deployment guide for 9.0 for configuration details. [DEPLOYMENT GUIDE](https://docs.paloaltonetworks.com/vm-series/9-0/vm-series-deployment/set-up-the-vm-series-firewall-on-azure/configure-activepassive-ha-for-vm-series-firewall-on-azure.html)
+You will still be responsible for configuring your own Azure HA settings within the Azure Portal and the VM-Series firewall. Please refer to the VM-Series deployment guide for 10.1.0 for configuration details. [DEPLOYMENT GUIDE](https://docs.paloaltonetworks.com/vm-series/10-1/vm-series-deployment/set-up-the-vm-series-firewall-on-azure/configure-activepassive-ha-for-vm-series-firewall-on-azure)
 
 
-[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSimOnPanw%2FAzure-HA-Deployment%2Fmaster%2Fazuredeploy.json)
+[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FPaloAltoNetworks%2FAzure-HA-Deployment%2Fmaster%2Fazuredeploy.json)
 
 # Manual Approach
 
 If you choose to take a different approach you can do the following
 
-1. Launch a VM-Series firewall using the latest which is 9.0(only needed if you don't have an existing VM-Series launched)
+1. Launch a VM-Series firewall using the latest which is 10.1.0 (only needed if you don't have an existing VM-Series launched)
 2. Use Azure CLI to launch a second VM-Series running PAN-OS 8.1 into the exact same Resource Group as the first firewall
 
 For more information on how to use the Azure CLI. [CLICK HERE](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)  
