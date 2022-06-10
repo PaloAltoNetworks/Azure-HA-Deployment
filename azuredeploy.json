@@ -10,18 +10,18 @@
       }
     },
     "srcIPInboundNSG": {
-       "type": "string",
-       "metadata": {
-           "description": "Your source public IP address. Added to the inbound NSG on eth0 (MGMT)"
-       },
-       "defaultValue": "0.0.0.0/0"
+      "type": "string",
+      "metadata": {
+        "description": "Your source public IP address. Added to the inbound NSG on eth0 (MGMT)"
+      },
+      "defaultValue": "0.0.0.0/0"
     },
     "nsgName": {
-       "type": "string",
-       "metadata": {
-           "description": "Name of inbound NSG on eth0 (MGMT).  Name must be unique within Resource Group"
-       },
-       "defaultValue": "DefaultNSG"
+      "type": "string",
+      "metadata": {
+        "description": "Name of inbound NSG on eth0 (MGMT).  Name must be unique within Resource Group"
+      },
+      "defaultValue": "DefaultNSG"
     },
     "customData": {
       "type": "string",
@@ -31,19 +31,20 @@
       }
     },
     "vmName": {
-       "type": "string",
-       "metadata": {
-          "description": "Name of VM-Series VM in the Azure portal"
-       },
-       "defaultValue": "VM-Series"
+      "type": "string",
+      "metadata": {
+        "description": "Name of VM-Series VM in the Azure portal"
+      },
+      "defaultValue": "VM-Series"
     },
     "imageVersion": {
       "type": "string",
       "allowedValues": [
         "latest",
-        "9.0.0",
-        "8.1.0",
-        "8.0.0"
+        "10.2.1",
+        "10.1.0",
+        "10.0.6",
+        "9.1.10"
       ],
       "metadata": {
         "description": "Version number of VM-Series VM in the Azure portal"
@@ -51,30 +52,32 @@
       "defaultValue": "latest"
     },
     "vmSize": {
-       "type": "string",
-       "allowedValues": [
-          "Standard_D3",
-          "Standard_D4",
-          "Standard_D3_v2",
-          "Standard_D4_v2",
-          "Standard_D5_v2",
-          "Standard_D3_v3",
-          "Standard_D4_v3",
-          "Standard_D16_v3",
-          "Standard_DS3_v2",
-          "Standard_DS4_v2",
-          "Standard_DS5_v2",
-          "Standard_DS3_v3",
-          "Standard_DS4_v3",
-          "Standard_DS16_v3",
-          "Standard_A4"
-       ],
-       "metadata": {
-          "description": "Azure VM size for VM-Series"
-       },
-       "defaultValue": "Standard_D3_v2"
+      "type": "string",
+      "allowedValues": [
+        "Standard_DS3_v2",
+        "Standard_DS4_v2",
+        "Standard_DS5_v2",
+        "Standard_D3_v2",
+        "Standard_D4_v2",
+        "Standard_D4_v3",
+        "Standard_D5_v2",
+        "Standard_D8_v3",
+        "Standard_D8_v4",
+        "Standard_D16_v3",
+        "Standard_D16_v4",
+        "Standard_D8s_v4",
+        "Standard_D16s_v4",
+        "Standard_F8s_v2",
+        "Standard_F32s_v2",
+        "Standard_D8s_v3",
+        "Standard_D16s_v3"
+      ],
+      "metadata": {
+        "description": "Azure VM size for VM-Series"
+      },
+      "defaultValue": "Standard_DS3_v2"
     },
-    "virtualNetworkName": { 
+    "virtualNetworkName": {
       "type": "string",
       "metadata": {
         "description": "Name of the Virtual Network (VNET)"
@@ -82,15 +85,15 @@
       "defaultValue": "fwVNET"
     },
     "vnetNewOrExisting": {
-            "type": "string",
-            "defaultValue": "new",
-            "allowedValues": [
-                "new",
-                "existing"
-            ],
-            "metadata": {
-                "description": "Use new or existing VNET"
-            }
+      "type": "string",
+      "defaultValue": "new",
+      "allowedValues": [
+        "new",
+        "existing"
+      ],
+      "metadata": {
+        "description": "Use new or existing VNET"
+      }
     },
     "virtualNetworkAddressPrefix": {
       "type": "string",
@@ -145,15 +148,15 @@
       }
     },
     "authenticationType": {
-            "type": "string",
-            "metadata": {
-                "description": "Type of administrator user authentication "
-            },
-            "allowedValues": [
-                "sshPublicKey",
-                "password"
-            ],
-            "defaultValue": "password"
+      "type": "string",
+      "metadata": {
+        "description": "Type of administrator user authentication "
+      },
+      "allowedValues": [
+        "sshPublicKey",
+        "password"
+      ],
+      "defaultValue": "password"
     },
     "adminUsername": {
       "type": "string",
@@ -212,7 +215,7 @@
     },
     "bootstrap": {
       "type": "string",
-      "defaultValue" : "no",
+      "defaultValue": "no",
       "allowedValues": [
         "yes",
         "no"
@@ -223,28 +226,28 @@
     },
     "zone": {
       "type": "string",
-      "defaultValue" : "None",
+      "defaultValue": "None",
       "metadata": {
         "description": "Availability Zone for VM-Series"
       }
     },
     "availabilitySetName": {
       "type": "string",
-      "defaultValue" : "None"
+      "defaultValue": "None"
     },
     "availabilitySetPlatformFaultDomainCount": {
       "type": "string",
-      "defaultValue" : "2"
+      "defaultValue": "2"
     },
     "availabilitySetPlatformUpdateDomainCount": {
       "type": "string",
-      "defaultValue" : "5"
+      "defaultValue": "5"
     }
   },
   "variables": {
     "imagePublisher": "paloaltonetworks",
-    "imageSku" : "byol",
-    "imageOffer" : "vmseries1",
+    "imageSku": "byol",
+    "imageOffer": "vmseries-flex",
     "nicName": "[concat(parameters('vmName'), '-', parameters('publicIPAddressName'), '-eth')]",
     "existingVnetID": "[resourceId(parameters('virtualNetworkExistingRGName'),concat('Microsoft.Network','/','virtualNetworks'),parameters('virtualNetworkName'))]",
     "existingSubnet0Ref": "[concat(variables('existingVnetID'),'/subnets/',parameters('subnet0Name'))]",
@@ -281,7 +284,7 @@
         "properties": {
           "addressPrefix": "[parameters('subnet0Prefix')]",
           "networkSecurityGroup": {
-              "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsgName'))]"
+            "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsgName'))]"
           }
         }
       },
@@ -332,46 +335,50 @@
       "apiVersion": "2017-10-01",
       "location": "[parameters('location')]",
       "properties": {
-        "securityRules": [{
-          "name": "Allow-Outside-From-IP",
-          "properties": {
-            "description": "Rule",
-            "protocol": "*",
-            "sourcePortRange": "*",
-            "destinationPortRange": "*",
-            "sourceAddressPrefix": "[parameters('srcIPInboundNSG')]",
-            "destinationAddressPrefix": "*",
-            "access": "Allow",
-            "priority": 100,
-            "direction": "Inbound"
+        "securityRules": [
+          {
+            "name": "Allow-Outside-From-IP",
+            "properties": {
+              "description": "Rule",
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "[parameters('srcIPInboundNSG')]",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Allow-Intra",
+            "properties": {
+              "description": "Allow intra network traffic",
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "[parameters('virtualNetworkAddressPrefix')]",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 101,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Default-Deny",
+            "properties": {
+              "description": "Default-Deny if we don't match Allow rule",
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 200,
+              "direction": "Inbound"
+            }
           }
-        }, {
-          "name": "Allow-Intra",
-          "properties": {
-            "description": "Allow intra network traffic",
-            "protocol": "*",
-            "sourcePortRange": "*",
-            "destinationPortRange": "*",
-            "sourceAddressPrefix": "[parameters('virtualNetworkAddressPrefix')]",
-            "destinationAddressPrefix": "*",
-            "access": "Allow",
-            "priority": 101,
-            "direction": "Inbound"
-          }
-        }, {
-          "name": "Default-Deny",
-          "properties": {
-            "description": "Default-Deny if we don't match Allow rule",
-            "protocol": "*",
-            "sourcePortRange": "*",
-            "destinationPortRange": "*",
-            "sourceAddressPrefix": "*",
-            "destinationAddressPrefix": "*",
-            "access": "Deny",
-            "priority": 200,
-            "direction": "Inbound"
-          }
-        }]
+        ]
       }
     },
     {
@@ -505,46 +512,50 @@
         "publisher": "[variables('imagePublisher')]"
       },
       "properties": {
-          "hardwareProfile": {
-              "vmSize": "[parameters('vmSize')]"
+        "hardwareProfile": {
+          "vmSize": "[parameters('vmSize')]"
+        },
+        "osProfile": {
+          "computerName": "[parameters('vmName')]",
+          "adminUsername": "[parameters('adminUsername')]",
+          "adminPassword": "[parameters('adminPassword')]",
+          "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]",
+          "customData": "[if(equals(parameters('bootstrap'), 'no'), json('null'), base64(parameters('customData')))]"
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "[variables('imagePublisher')]",
+            "offer": "[variables('imageOffer')]",
+            "sku": "[variables('imageSku')]",
+            "version": "[parameters('imageVersion')]"
           },
-          "osProfile": {
-              "computerName": "[parameters('vmName')]",
-              "adminUsername": "[parameters('adminUsername')]",
-              "adminPassword": "[parameters('adminPassword')]",
-              "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]",
-              "customData": "[if(equals(parameters('bootstrap'), 'no'), json('null'), base64(parameters('customData')))]"
-          },
-          "storageProfile": {
-              "imageReference": {
-                  "publisher": "[variables('imagePublisher')]",
-                  "offer": "[variables('imageOffer')]",
-                  "sku": "[variables('imageSku')]",
-                  "version": "[parameters('imageVersion')]"
-              },
-              "osDisk": {
-                  "createOption": "FromImage"
+          "osDisk": {
+            "createOption": "FromImage"
+          }
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicName'),'0'))]",
+              "properties": {
+                "primary": true
               }
-          },
-          "networkProfile": {
-              "networkInterfaces": [{
-                  "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicName'),'0'))]",
-                  "properties": {
-                      "primary": true
-                  }
-              }, {
-                  "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicName'),'1'))]",
-                  "properties": {
-                      "primary": false
-                  }
-              }, {
-                  "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicName'),'2'))]",
-                  "properties": {
-                      "primary": false
-                  }
-              }]
-          },
-          "availabilitySet": "[if(equals(parameters('availabilitySetName'), 'None'), json('null'), variables('availabilitySet'))]"
+            },
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicName'),'1'))]",
+              "properties": {
+                "primary": false
+              }
+            },
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicName'),'2'))]",
+              "properties": {
+                "primary": false
+              }
+            }
+          ]
+        },
+        "availabilitySet": "[if(equals(parameters('availabilitySetName'), 'None'), json('null'), variables('availabilitySet'))]"
       },
       "zones": "[if(equals(parameters('zone'), 'None'), json('null'), variables('zones'))]"
     }
